@@ -1,7 +1,5 @@
 import type { ComponentPropsWithoutRef, CSSProperties } from "react";
 
-import { themeConfig } from "@/config/theme";
-
 export type SectionTitleAlign = "left" | "center";
 
 export type SectionTitleProps = Omit<
@@ -40,10 +38,10 @@ export function SectionTitle({
     .filter(Boolean)
     .join(" ");
   const sectionTitleStyle: SectionTitleStyle = {
-    "--section-title-accent": themeConfig.colors.primary,
-    "--section-title-font": themeConfig.fonts.display,
-    "--section-title-muted": themeConfig.colors.mutedText,
-    "--section-title-text": themeConfig.colors.text,
+    "--section-title-accent": "var(--color-primary)",
+    "--section-title-font": "var(--font-display)",
+    "--section-title-muted": "var(--color-muted-text)",
+    "--section-title-text": "var(--color-text)",
     ...style,
   };
 

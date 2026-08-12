@@ -1,7 +1,5 @@
 import type { ComponentPropsWithoutRef, CSSProperties } from "react";
 
-import { themeConfig } from "@/config/theme";
-
 export type ButtonVariant = "primary" | "secondary" | "ghost";
 export type ButtonSize = "sm" | "md" | "lg";
 
@@ -41,22 +39,22 @@ const sizeClasses: Record<ButtonSize, string> = {
 
 const variantStyles: Record<ButtonVariant, ButtonVisualStyle> = {
   primary: {
-    "--button-background": themeConfig.colors.primary,
-    "--button-hover-background": themeConfig.colors.secondary,
-    borderColor: themeConfig.colors.primary,
-    color: themeConfig.colors.background,
+    "--button-background": "var(--color-primary)",
+    "--button-hover-background": "var(--color-secondary)",
+    borderColor: "var(--color-primary)",
+    color: "var(--color-background)",
   },
   secondary: {
-    "--button-background": themeConfig.colors.surface,
-    "--button-hover-background": themeConfig.colors.border,
-    borderColor: themeConfig.colors.border,
-    color: themeConfig.colors.text,
+    "--button-background": "var(--color-surface)",
+    "--button-hover-background": "var(--color-border)",
+    borderColor: "var(--color-border)",
+    color: "var(--color-text)",
   },
   ghost: {
     "--button-background": "transparent",
-    "--button-hover-background": themeConfig.colors.surface,
+    "--button-hover-background": "var(--color-surface)",
     borderColor: "transparent",
-    color: themeConfig.colors.primary,
+    color: "var(--color-primary)",
   },
 };
 
@@ -70,8 +68,8 @@ function getButtonStyle(
 ): ButtonVisualStyle {
   return {
     ...variantStyles[variant],
-    borderRadius: themeConfig.radius,
-    outlineColor: themeConfig.colors.primary,
+    borderRadius: "var(--radius-md)",
+    outlineColor: "var(--color-primary)",
     ...style,
   };
 }

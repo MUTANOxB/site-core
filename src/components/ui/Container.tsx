@@ -1,7 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
 
-import { themeConfig } from "@/config/theme";
-
 export type ContainerProps = ComponentPropsWithoutRef<"div">;
 
 export function Container({
@@ -21,7 +19,7 @@ export function Container({
     <div
       {...props}
       className={classes}
-      style={{ maxWidth: themeConfig.contentWidth, ...style }}
+      style={{ maxWidth: "var(--content-max-width)", ...style }}
     >
       {children}
     </div>

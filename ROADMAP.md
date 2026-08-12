@@ -48,11 +48,11 @@
 
 ## Etapa 6 — Layout base
 
-- [ ] estrutura global;
-- [ ] fontes;
-- [ ] metadata;
-- [ ] estilos globais;
-- [ ] tokens essenciais.
+- [x] estrutura global;
+- [x] fontes;
+- [x] metadata;
+- [x] estilos globais;
+- [x] tokens essenciais.
 
 ## Etapa 7 — Header
 

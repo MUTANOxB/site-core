@@ -1,7 +1,5 @@
 import type { ComponentPropsWithoutRef, CSSProperties } from "react";
 
-import { themeConfig } from "@/config/theme";
-
 type BadgeStyle = CSSProperties & {
   "--badge-background": string;
   "--badge-border": string;
@@ -19,10 +17,10 @@ export function Badge({ children, className, style, ...props }: BadgeProps) {
     .filter(Boolean)
     .join(" ");
   const badgeStyle: BadgeStyle = {
-    "--badge-background": themeConfig.colors.surface,
-    "--badge-border": themeConfig.colors.border,
-    "--badge-foreground": themeConfig.colors.mutedText,
-    "--badge-radius": themeConfig.radius,
+    "--badge-background": "var(--color-surface)",
+    "--badge-border": "var(--color-border)",
+    "--badge-foreground": "var(--color-muted-text)",
+    "--badge-radius": "var(--radius-md)",
     ...style,
   };
 

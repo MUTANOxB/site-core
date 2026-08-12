@@ -11,8 +11,8 @@ export const themeConfig: ThemeConfig = {
     border: "#e5e5e5",
   },
   fonts: {
-    display: "system-ui, sans-serif",
-    body: "system-ui, sans-serif",
+    display: "var(--font-core-sans)",
+    body: "var(--font-core-sans)",
   },
   radius: "0.75rem",
   shadow: "0 8px 24px rgb(0 0 0 / 0.08)",

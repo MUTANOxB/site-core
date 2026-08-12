@@ -1,1 +1,77 @@
 @import "tailwindcss";
+
+@theme static inline {
+  --color-primary: var(--theme-color-primary);
+  --color-secondary: var(--theme-color-secondary);
+  --color-background: var(--theme-color-background);
+  --color-surface: var(--theme-color-surface);
+  --color-text: var(--theme-color-text);
+  --color-muted-text: var(--theme-color-muted-text);
+  --color-border: var(--theme-color-border);
+
+  --font-sans: var(--theme-font-body);
+  --font-display: var(--theme-font-display);
+  --font-body: var(--theme-font-body);
+
+  --radius-sm: 0.5rem;
+  --radius-md: var(--theme-radius);
+  --radius-lg: 1rem;
+  --radius-pill: 9999px;
+
+  --shadow-default: var(--theme-shadow);
+  --content-max-width: var(--theme-content-max-width);
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-height: 100%;
+    background-color: var(--color-background);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-height: 100vh;
+    min-height: 100svh;
+    margin: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  a:not([class]) {
+    text-decoration-line: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+
+  img,
+  picture {
+    display: block;
+    max-width: 100%;
+  }
+
+  img {
+    height: auto;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    color: inherit;
+    font: inherit;
+  }
+}
