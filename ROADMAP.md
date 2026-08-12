@@ -74,7 +74,7 @@
 
 ## Etapa 9 — Sections V1
 
-- [ ] Sobre;
+- [x] Sobre;
 - [ ] Serviços;
 - [ ] Benefícios;
 - [ ] Galeria;
