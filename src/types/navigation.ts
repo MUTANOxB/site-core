@@ -3,4 +3,7 @@ export interface NavigationItem {
   href: string;
 }
 
-export type NavigationConfig = NavigationItem[];
+export interface NavigationConfig {
+  items: NavigationItem[];
+  cta: NavigationItem;
+}

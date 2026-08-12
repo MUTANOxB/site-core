@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import type { CSSProperties, ReactNode } from "react";
 
+import { Header } from "@/components/layout/Header";
 import { siteConfig } from "@/config/site";
 import { themeConfig } from "@/config/theme";
 import "@/styles/globals.css";
@@ -58,7 +59,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       lang={siteConfig.locale}
       style={themeStyle}
     >
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

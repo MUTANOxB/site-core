@@ -56,12 +56,12 @@
 
 ## Etapa 7 — Header
 
-- [ ] desktop;
-- [ ] mobile;
-- [ ] navegação;
-- [ ] CTA;
-- [ ] acessibilidade;
-- [ ] responsividade.
+- [x] desktop;
+- [x] mobile;
+- [x] navegação;
+- [x] CTA;
+- [x] acessibilidade;
+- [x] responsividade.
 
 ## Etapa 8 — Hero
 

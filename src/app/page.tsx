@@ -4,7 +4,7 @@ import { siteConfig } from "@/config/site";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content" tabIndex={-1}>
       <Section>
         <Container>
           <p>{siteConfig.name}</p>
