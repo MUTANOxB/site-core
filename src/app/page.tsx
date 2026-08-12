@@ -1,6 +1,37 @@
 import { siteConfig } from "@/config/site";
 import { AboutSection } from "@/sections/about/AboutSection";
 import { HeroSection } from "@/sections/hero/HeroSection";
+import { ServicesSection } from "@/sections/services/ServicesSection";
+import type { ServicesContent } from "@/types/services";
+
+const servicesContent: ServicesContent = {
+  eyebrow: "Serviços",
+  title: "Soluções adaptadas a diferentes necessidades",
+  description:
+    "Uma estrutura flexível para apresentar serviços de forma clara e objetiva.",
+  items: [
+    {
+      title: "Planejamento",
+      description:
+        "Estruturação da experiência e organização das informações.",
+    },
+    {
+      title: "Implementação",
+      description:
+        "Construção de interfaces rápidas, responsivas e acessíveis.",
+    },
+    {
+      title: "Personalização",
+      description:
+        "Adaptação visual e estrutural para diferentes identidades.",
+    },
+    {
+      title: "Evolução",
+      description:
+        "Base preparada para receber novas funcionalidades quando necessário.",
+    },
+  ],
+};
 
 export default function Home() {
   return (
@@ -27,6 +58,7 @@ export default function Home() {
         ]}
         title="Uma base construída para evoluir"
       />
+      <ServicesSection content={servicesContent} id="servicos" />
     </main>
   );
 }
