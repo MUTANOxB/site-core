@@ -65,12 +65,12 @@
 
 ## Etapa 8 — Hero
 
-- [ ] estrutura;
-- [ ] conteúdo configurável;
-- [ ] CTA principal;
-- [ ] CTA secundário;
-- [ ] mídia;
-- [ ] responsividade.
+- [x] estrutura;
+- [x] conteúdo configurável;
+- [x] CTA principal;
+- [x] CTA secundário;
+- [x] mídia;
+- [x] responsividade.
 
 ## Etapa 9 — Sections V1
 
