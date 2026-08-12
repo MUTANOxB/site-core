@@ -39,11 +39,11 @@
 
 ## Etapa 5 — UI primitives
 
-- [ ] Container;
-- [ ] Section;
-- [ ] SectionTitle;
-- [ ] Button;
-- [ ] Badge;
+- [x] Container;
+- [x] Section;
+- [x] SectionTitle;
+- [x] Button;
+- [x] Badge;
 - [ ] primitives adicionais somente se necessárias.
 
 ## Etapa 6 — Layout base
