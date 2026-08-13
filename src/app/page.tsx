@@ -1,9 +1,11 @@
 import { siteConfig } from "@/config/site";
 import { AboutSection } from "@/sections/about/AboutSection";
 import { BenefitsSection } from "@/sections/benefits/BenefitsSection";
+import { GallerySection } from "@/sections/gallery/GallerySection";
 import { HeroSection } from "@/sections/hero/HeroSection";
 import { ServicesSection } from "@/sections/services/ServicesSection";
 import type { BenefitsContent } from "@/types/benefits";
+import type { GalleryContent } from "@/types/gallery";
 import type { ServicesContent } from "@/types/services";
 
 const servicesContent: ServicesContent = {
@@ -64,6 +66,31 @@ const benefitsContent: BenefitsContent = {
   ],
 };
 
+const galleryContent: GalleryContent = {
+  eyebrow: "Galeria",
+  title: "Uma visão do trabalho em diferentes contextos",
+  description:
+    "Uma estrutura visual preparada para destacar imagens com clareza e consistência.",
+  items: [
+    {
+      src: "/gallery/gallery-01.svg",
+      alt: "Composição abstrata com blocos e círculo em tons terrosos neutros",
+    },
+    {
+      src: "/gallery/gallery-02.svg",
+      alt: "Composição abstrata com formas triangulares e círculo claro",
+    },
+    {
+      src: "/gallery/gallery-03.svg",
+      alt: "Composição abstrata com faixas diagonais e círculo central",
+    },
+    {
+      src: "/gallery/gallery-04.svg",
+      alt: "Composição abstrata com círculos sobrepostos em tons de cinza",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
@@ -91,6 +118,7 @@ export default function Home() {
       />
       <ServicesSection content={servicesContent} id="servicos" />
       <BenefitsSection content={benefitsContent} id="beneficios" />
+      <GallerySection content={galleryContent} id="galeria" />
     </main>
   );
 }
