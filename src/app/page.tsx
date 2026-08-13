@@ -4,9 +4,11 @@ import { BenefitsSection } from "@/sections/benefits/BenefitsSection";
 import { GallerySection } from "@/sections/gallery/GallerySection";
 import { HeroSection } from "@/sections/hero/HeroSection";
 import { ServicesSection } from "@/sections/services/ServicesSection";
+import { TestimonialsSection } from "@/sections/testimonials/TestimonialsSection";
 import type { BenefitsContent } from "@/types/benefits";
 import type { GalleryContent } from "@/types/gallery";
 import type { ServicesContent } from "@/types/services";
+import type { TestimonialsContent } from "@/types/testimonials";
 
 const servicesContent: ServicesContent = {
   eyebrow: "Serviços",
@@ -91,6 +93,26 @@ const galleryContent: GalleryContent = {
   ],
 };
 
+const testimonialsContent: TestimonialsContent = {
+  eyebrow: "Avaliações",
+  title: "Experiências que ajudam a construir confiança",
+  description:
+    "A estrutura está preparada para receber relatos reais de clientes de forma clara e responsável.",
+  items: [
+    {
+      quote:
+        "Espaço reservado para um depoimento real sobre atendimento, experiência ou resultado.",
+      name: "Cliente exemplo",
+      role: "Depoimento de demonstração",
+    },
+    {
+      quote:
+        "Este bloco demonstra como avaliações reais poderão aparecer sem competir com o restante do conteúdo.",
+      name: "Cliente exemplo 02",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
@@ -119,6 +141,7 @@ export default function Home() {
       <ServicesSection content={servicesContent} id="servicos" />
       <BenefitsSection content={benefitsContent} id="beneficios" />
       <GallerySection content={galleryContent} id="galeria" />
+      <TestimonialsSection content={testimonialsContent} id="avaliacoes" />
     </main>
   );
 }

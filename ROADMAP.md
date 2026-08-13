@@ -78,7 +78,7 @@
 - [x] Serviços;
 - [x] Benefícios;
 - [x] Galeria;
-- [ ] Avaliações;
+- [x] Avaliações;
 - [ ] FAQ;
 - [ ] Localização;
 - [ ] CTA final;
