@@ -1,7 +1,9 @@
 import { siteConfig } from "@/config/site";
 import { AboutSection } from "@/sections/about/AboutSection";
+import { BenefitsSection } from "@/sections/benefits/BenefitsSection";
 import { HeroSection } from "@/sections/hero/HeroSection";
 import { ServicesSection } from "@/sections/services/ServicesSection";
+import type { BenefitsContent } from "@/types/benefits";
 import type { ServicesContent } from "@/types/services";
 
 const servicesContent: ServicesContent = {
@@ -33,6 +35,35 @@ const servicesContent: ServicesContent = {
   ],
 };
 
+const benefitsContent: BenefitsContent = {
+  eyebrow: "Benefícios",
+  title: "Uma estrutura pensada para crescer com o projeto",
+  description:
+    "Decisões simples na base ajudam a manter qualidade, consistência e liberdade para evoluir.",
+  items: [
+    {
+      title: "Estrutura flexível",
+      description:
+        "Componentes podem ser combinados sem reconstruir toda a experiência.",
+    },
+    {
+      title: "Experiência consistente",
+      description:
+        "Padrões de interface ajudam a manter navegação e leitura previsíveis.",
+    },
+    {
+      title: "Evolução gradual",
+      description:
+        "Novas funcionalidades entram somente quando existe necessidade real.",
+    },
+    {
+      title: "Manutenção simples",
+      description:
+        "Responsabilidades bem separadas facilitam ajustes e futuras melhorias.",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
@@ -59,6 +90,7 @@ export default function Home() {
         title="Uma base construída para evoluir"
       />
       <ServicesSection content={servicesContent} id="servicos" />
+      <BenefitsSection content={benefitsContent} id="beneficios" />
     </main>
   );
 }

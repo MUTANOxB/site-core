@@ -76,7 +76,7 @@
 
 - [x] Sobre;
 - [x] Serviços;
-- [ ] Benefícios;
+- [x] Benefícios;
 - [ ] Galeria;
 - [ ] Avaliações;
 - [ ] FAQ;
