@@ -34,15 +34,17 @@ export function HeroSection({
       <Container>
         <div
           className={[
-            "grid items-center gap-10 lg:gap-16",
-            variant === "split" && hasMedia ? "lg:grid-cols-2" : "",
+            "grid items-center gap-10 lg:gap-16 lg:py-8 xl:gap-20 xl:py-12 2xl:gap-24 2xl:py-16",
+            variant === "split" && hasMedia
+              ? "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
+              : "",
           ]
             .filter(Boolean)
             .join(" ")}
         >
           <div
             className={[
-              isCentered ? "mx-auto max-w-3xl text-center" : "max-w-3xl",
+              isCentered ? "mx-auto max-w-5xl text-center" : "max-w-3xl",
               hasMedia ? "min-w-0" : "",
             ]
               .filter(Boolean)
@@ -59,6 +61,9 @@ export function HeroSection({
             <h1
               className={[
                 "break-words font-display text-4xl font-bold leading-tight tracking-tight text-text sm:text-5xl lg:text-6xl",
+                isCentered
+                  ? "xl:text-7xl xl:leading-[1.08]"
+                  : "xl:text-6xl 2xl:text-7xl 2xl:leading-[1.08]",
                 eyebrow ? "mt-5" : "",
               ]
                 .filter(Boolean)
@@ -70,7 +75,7 @@ export function HeroSection({
             {description ? (
               <p
                 className={[
-                  "mt-5 max-w-2xl text-lg leading-8 text-muted-text sm:text-xl",
+                  "mt-5 max-w-2xl text-lg leading-8 text-muted-text sm:text-xl xl:mt-6 xl:max-w-3xl",
                   isCentered ? "mx-auto" : "",
                 ]
                   .filter(Boolean)
@@ -83,7 +88,7 @@ export function HeroSection({
             {hasActions ? (
               <div
                 className={[
-                  "mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap",
+                  "mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap xl:mt-10 xl:gap-4",
                   isCentered ? "sm:justify-center" : "",
                 ]
                   .filter(Boolean)
@@ -91,7 +96,7 @@ export function HeroSection({
               >
                 {primaryAction ? (
                   <Button
-                    className="w-full sm:w-auto"
+                    className="w-full sm:w-auto xl:min-h-14 xl:px-8 xl:text-lg"
                     href={primaryAction.href}
                     rel={
                       primaryAction.external ? "noopener noreferrer" : undefined
@@ -111,7 +116,7 @@ export function HeroSection({
 
                 {secondaryAction ? (
                   <Button
-                    className="w-full sm:w-auto"
+                    className="w-full sm:w-auto xl:min-h-14 xl:px-8 xl:text-lg"
                     href={secondaryAction.href}
                     rel={
                       secondaryAction.external
@@ -138,7 +143,7 @@ export function HeroSection({
           {hasMedia ? (
             <div
               className={
-                isCentered ? "mx-auto w-full max-w-4xl" : "min-w-0"
+                isCentered ? "mx-auto w-full max-w-6xl" : "min-w-0"
               }
             >
               {media}

@@ -18,6 +18,7 @@ O Design System deve padronizar qualidade, não personalidade.
 8. Animações discretas.
 9. Menos elementos decorativos sem função.
 10. Identidade adaptável por cliente.
+11. Responsividade não significa apenas caber em telas menores. O layout também deve escalar adequadamente para telas maiores, utilizando o espaço disponível sem comprometer legibilidade, hierarquia ou consistência.
 
 ## 3. Evitar aparência de template genérico
 
@@ -63,6 +64,8 @@ Definir no mínimo:
 
 A escolha da fonte pode variar por cliente.
 
+A escala tipográfica deve progredir de forma responsiva entre mobile, tablet e desktop, preservando a hierarquia em cada faixa.
+
 ## 6. Botões
 
 Ter poucos estilos bem definidos.
@@ -86,11 +89,15 @@ Usar largura máxima coerente.
 
 Evitar conteúdo encostado nas laterais em telas pequenas.
 
+O Container de conteúdo pode ser amplo, com limite definido, enquanto textos corridos mantêm uma measure independente e confortável.
+
 ## 8. Sections
 
 Sections devem possuir ritmo vertical consistente.
 
 Nem todas precisam usar o mesmo fundo ou layout.
+
+Toda composição deve ser validada também em desktop grande, incluindo 1920 px, e não apenas quanto à ausência de overflow.
 
 ## 9. Cards
 

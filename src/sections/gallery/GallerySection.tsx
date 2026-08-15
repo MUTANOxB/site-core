@@ -26,7 +26,7 @@ export function GallerySection({ content, id }: GallerySectionProps) {
         />
 
         {items.length ? (
-          <ul className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:mt-14 xl:gap-8">
             {items.map((item, index) => (
               <li className="min-w-0" key={`${item.src}-${index}`}>
                 <div className="relative aspect-[4/3] overflow-hidden rounded-lg border border-border bg-surface">
@@ -34,7 +34,7 @@ export function GallerySection({ content, id }: GallerySectionProps) {
                     alt={item.alt}
                     className="object-cover"
                     fill
-                    sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2.25rem), (max-width: 1152px) calc(33vw - 2rem), 22rem"
+                    sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) calc(50vw - 2.25rem), (max-width: 1279px) calc(33.333vw - 2.667rem), (max-width: 1439px) calc(33.333vw - 3rem), 27rem"
                     src={item.src}
                   />
                 </div>

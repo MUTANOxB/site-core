@@ -24,18 +24,18 @@ export function ServicesSection({ content, id }: ServicesSectionProps) {
         />
 
         {items.length ? (
-          <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:mt-14 xl:gap-8 2xl:gap-10">
             {items.map((item, index) => (
               <li
-                className="min-w-0 rounded-lg border border-border bg-surface p-6"
+                className="min-w-0 rounded-lg border border-border bg-surface p-6 xl:p-8 2xl:p-10"
                 key={`${item.title}-${index}`}
               >
-                <h3 className="break-words font-display text-xl font-semibold tracking-tight text-text">
+                <h3 className="break-words font-display text-xl font-semibold tracking-tight text-text xl:text-2xl">
                   {item.title}
                 </h3>
 
                 {item.description ? (
-                  <p className="mt-3 break-words text-base leading-7 text-muted-text">
+                  <p className="mt-3 break-words text-base leading-7 text-muted-text xl:mt-4 xl:text-lg xl:leading-8">
                     {item.description}
                   </p>
                 ) : null}

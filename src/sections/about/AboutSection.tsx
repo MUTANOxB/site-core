@@ -29,8 +29,10 @@ export function AboutSection({
       <Container>
         <div
           className={[
-            "grid items-center gap-10 lg:gap-16",
-            hasMedia ? "lg:grid-cols-2" : "",
+            "grid items-center gap-10 lg:gap-16 xl:gap-24",
+            hasMedia
+              ? "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
+              : "",
           ]
             .filter(Boolean)
             .join(" ")}
@@ -44,7 +46,7 @@ export function AboutSection({
             />
 
             {paragraphs?.length ? (
-              <div className="mt-6 space-y-4 break-words text-base leading-7 text-muted-text sm:text-lg">
+              <div className="mt-6 space-y-4 break-words text-base leading-7 text-muted-text sm:text-lg xl:mt-8 xl:space-y-5 xl:text-xl xl:leading-8">
                 {paragraphs.map((paragraph, index) => (
                   <p key={`${index}-${paragraph}`}>{paragraph}</p>
                 ))}

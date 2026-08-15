@@ -79,6 +79,7 @@
 - [x] Benefícios;
 - [x] Galeria;
 - [x] Avaliações;
+- [x] auditoria de escala desktop;
 - [ ] FAQ;
 - [ ] Localização;
 - [ ] CTA final;

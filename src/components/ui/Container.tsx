@@ -9,7 +9,7 @@ export function Container({
   ...props
 }: ContainerProps) {
   const classes = [
-    "mx-auto w-full px-4 sm:px-6 lg:px-8",
+    "mx-auto w-full px-4 sm:px-6 lg:px-8 xl:px-10",
     className,
   ]
     .filter(Boolean)

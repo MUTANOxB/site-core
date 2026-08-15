@@ -16,6 +16,6 @@ export const themeConfig: ThemeConfig = {
   },
   radius: "0.75rem",
   shadow: "0 8px 24px rgb(0 0 0 / 0.08)",
-  contentWidth: "72rem",
+  contentWidth: "90rem",
   spacing: "0.25rem",
 };

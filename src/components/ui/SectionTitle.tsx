@@ -31,7 +31,7 @@ export function SectionTitle({
   ...props
 }: SectionTitleProps) {
   const classes = [
-    "max-w-2xl",
+    "max-w-2xl xl:max-w-3xl",
     align === "center" ? "mx-auto text-center" : "text-left",
     className,
   ]
@@ -54,14 +54,21 @@ export function SectionTitle({
       ) : null}
 
       <h2
-        className="text-3xl font-bold tracking-tight [color:var(--section-title-text)] [font-family:var(--section-title-font)] sm:text-4xl"
+        className="text-3xl font-bold tracking-tight [color:var(--section-title-text)] [font-family:var(--section-title-font)] sm:text-4xl lg:text-[2.625rem] lg:leading-tight xl:text-5xl xl:leading-[1.1]"
         id={headingId}
       >
         {title}
       </h2>
 
       {description ? (
-        <p className="mt-4 text-base leading-7 [color:var(--section-title-muted)] sm:text-lg">
+        <p
+          className={[
+            "mt-4 max-w-2xl text-base leading-7 [color:var(--section-title-muted)] sm:text-lg xl:mt-5 xl:text-xl xl:leading-8",
+            align === "center" ? "mx-auto" : "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+        >
           {description}
         </p>
       ) : null}
