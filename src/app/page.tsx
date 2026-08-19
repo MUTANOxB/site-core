@@ -1,11 +1,13 @@
 import { siteConfig } from "@/config/site";
 import { AboutSection } from "@/sections/about/AboutSection";
 import { BenefitsSection } from "@/sections/benefits/BenefitsSection";
+import { FAQSection } from "@/sections/faq/FAQSection";
 import { GallerySection } from "@/sections/gallery/GallerySection";
 import { HeroSection } from "@/sections/hero/HeroSection";
 import { ServicesSection } from "@/sections/services/ServicesSection";
 import { TestimonialsSection } from "@/sections/testimonials/TestimonialsSection";
 import type { BenefitsContent } from "@/types/benefits";
+import type { FAQContent } from "@/types/faq";
 import type { GalleryContent } from "@/types/gallery";
 import type { ServicesContent } from "@/types/services";
 import type { TestimonialsContent } from "@/types/testimonials";
@@ -113,6 +115,35 @@ const testimonialsContent: TestimonialsContent = {
   ],
 };
 
+const faqContent: FAQContent = {
+  eyebrow: "Perguntas frequentes",
+  title: "Informações importantes em um só lugar",
+  description:
+    "Uma estrutura simples para esclarecer dúvidas recorrentes antes do contato.",
+  items: [
+    {
+      question: "Como as informações deste site podem ser atualizadas?",
+      answer:
+        "O conteúdo é mantido separado dos componentes para facilitar futuras alterações sem reconstruir a interface.",
+    },
+    {
+      question: "O site funciona em celulares e tablets?",
+      answer:
+        "A interface é desenvolvida de forma responsiva e validada em diferentes larguras de tela.",
+    },
+    {
+      question: "Novas funcionalidades podem ser adicionadas depois?",
+      answer:
+        "A estrutura foi preparada para evoluir gradualmente conforme novas necessidades surgirem.",
+    },
+    {
+      question: "É necessário utilizar todas as seções disponíveis?",
+      answer:
+        "Não. Cada projeto pode utilizar apenas as seções e funcionalidades adequadas ao seu contexto.",
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
@@ -142,6 +173,7 @@ export default function Home() {
       <BenefitsSection content={benefitsContent} id="beneficios" />
       <GallerySection content={galleryContent} id="galeria" />
       <TestimonialsSection content={testimonialsContent} id="avaliacoes" />
+      <FAQSection content={faqContent} id="faq" />
     </main>
   );
 }

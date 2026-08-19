@@ -80,7 +80,7 @@
 - [x] Galeria;
 - [x] Avaliações;
 - [x] auditoria de escala desktop;
-- [ ] FAQ;
+- [x] FAQ;
 - [ ] Localização;
 - [ ] CTA final;
 - [ ] Footer.
