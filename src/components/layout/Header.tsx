@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { navigationConfig } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
-import { buildWhatsAppUrl } from "@/lib/whatsapp";
+import { resolveWhatsAppUrl } from "@/lib/whatsapp";
 
 const navigationLinkClasses =
   "inline-flex min-h-10 items-center whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium text-muted-text transition-colors hover:bg-surface hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none lg:min-h-11 lg:px-4 lg:text-base";
@@ -13,13 +13,11 @@ const navigationLinkClasses =
 export function Header() {
   const globalCta = {
     ...navigationConfig.cta,
-    href:
-      siteConfig.contact.whatsapp.trim().length > 0
-        ? buildWhatsAppUrl({
-            phone: siteConfig.contact.whatsapp,
-            message: siteConfig.contact.whatsappMessage,
-          })
-        : navigationConfig.cta.href,
+    href: resolveWhatsAppUrl({
+      phone: siteConfig.contact.whatsapp,
+      message: siteConfig.contact.whatsappMessage,
+      fallbackHref: navigationConfig.cta.href,
+    }),
   };
 
   return (

@@ -91,7 +91,7 @@
 - [x] geração de URL;
 - [x] mensagem configurável;
 - [x] CTA global;
-- [ ] CTA contextual.
+- [x] CTA contextual.
 
 ## Etapa 11 — Template de serviços
 

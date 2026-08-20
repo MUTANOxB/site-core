@@ -1,4 +1,5 @@
 import { siteConfig } from "@/config/site";
+import { resolveWhatsAppUrl } from "@/lib/whatsapp";
 import { AboutSection } from "@/sections/about/AboutSection";
 import { BenefitsSection } from "@/sections/benefits/BenefitsSection";
 import { FAQSection } from "@/sections/faq/FAQSection";
@@ -163,7 +164,11 @@ const finalCTAContent: FinalCTAContent = {
     "O Core organiza as bases da experiência para que cada projeto possa avançar de forma consistente.",
   primaryAction: {
     label: "Iniciar próximo passo",
-    href: "#inicio",
+    href: resolveWhatsAppUrl({
+      phone: siteConfig.contact.whatsapp,
+      message: "Olá! Gostaria de conversar sobre o próximo passo.",
+      fallbackHref: "#inicio",
+    }),
   },
   secondaryAction: {
     label: "Rever serviços",

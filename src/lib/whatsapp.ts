@@ -3,6 +3,10 @@ export type WhatsAppUrlOptions = {
   message?: string;
 };
 
+type ResolveWhatsAppUrlOptions = WhatsAppUrlOptions & {
+  fallbackHref: string;
+};
+
 const WHATSAPP_BASE_URL = "https://wa.me/";
 const MIN_WHATSAPP_PHONE_DIGITS = 8;
 
@@ -30,4 +34,16 @@ export function buildWhatsAppUrl({
   }
 
   return `${url}?text=${encodeURIComponent(message)}`;
+}
+
+export function resolveWhatsAppUrl({
+  phone,
+  message,
+  fallbackHref,
+}: ResolveWhatsAppUrlOptions): string {
+  if (phone.trim().length === 0) {
+    return fallbackHref;
+  }
+
+  return buildWhatsAppUrl({ phone, message });
 }
