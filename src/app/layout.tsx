@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist } from "next/font/google";
 import type { CSSProperties, ReactNode } from "react";
 
+import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { siteConfig } from "@/config/site";
 import { themeConfig } from "@/config/theme";
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

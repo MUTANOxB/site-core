@@ -83,7 +83,7 @@
 - [x] FAQ;
 - [x] Localização;
 - [x] CTA final;
-- [ ] Footer.
+- [x] Footer.
 
 ## Etapa 10 — WhatsApp
 
