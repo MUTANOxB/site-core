@@ -90,7 +90,7 @@
 - [x] normalização de telefone;
 - [x] geração de URL;
 - [x] mensagem configurável;
-- [ ] CTA global;
+- [x] CTA global;
 - [ ] CTA contextual.
 
 ## Etapa 11 — Template de serviços

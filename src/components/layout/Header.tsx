@@ -5,11 +5,23 @@ import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
 import { navigationConfig } from "@/config/navigation";
 import { siteConfig } from "@/config/site";
+import { buildWhatsAppUrl } from "@/lib/whatsapp";
 
 const navigationLinkClasses =
   "inline-flex min-h-10 items-center whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium text-muted-text transition-colors hover:bg-surface hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none lg:min-h-11 lg:px-4 lg:text-base";
 
 export function Header() {
+  const globalCta = {
+    ...navigationConfig.cta,
+    href:
+      siteConfig.contact.whatsapp.trim().length > 0
+        ? buildWhatsAppUrl({
+            phone: siteConfig.contact.whatsapp,
+            message: siteConfig.contact.whatsappMessage,
+          })
+        : navigationConfig.cta.href,
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background">
       <a
@@ -43,15 +55,15 @@ export function Header() {
 
           <Button
             className="lg:px-5 lg:text-base 2xl:min-h-12 2xl:px-6"
-            href={navigationConfig.cta.href}
+            href={globalCta.href}
             size="md"
           >
-            {navigationConfig.cta.label}
+            {globalCta.label}
           </Button>
         </div>
 
         <MobileMenu
-          cta={navigationConfig.cta}
+          cta={globalCta}
           items={navigationConfig.items}
         />
       </Container>

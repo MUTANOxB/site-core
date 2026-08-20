@@ -1,5 +1,6 @@
 export interface SiteContact {
   whatsapp: string;
+  whatsappMessage?: string;
   phone?: string;
   email?: string;
 }
