@@ -81,7 +81,7 @@
 - [x] Avaliações;
 - [x] auditoria de escala desktop;
 - [x] FAQ;
-- [ ] Localização;
+- [x] Localização;
 - [ ] CTA final;
 - [ ] Footer.
 

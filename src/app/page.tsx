@@ -4,11 +4,13 @@ import { BenefitsSection } from "@/sections/benefits/BenefitsSection";
 import { FAQSection } from "@/sections/faq/FAQSection";
 import { GallerySection } from "@/sections/gallery/GallerySection";
 import { HeroSection } from "@/sections/hero/HeroSection";
+import { LocationSection } from "@/sections/location/LocationSection";
 import { ServicesSection } from "@/sections/services/ServicesSection";
 import { TestimonialsSection } from "@/sections/testimonials/TestimonialsSection";
 import type { BenefitsContent } from "@/types/benefits";
 import type { FAQContent } from "@/types/faq";
 import type { GalleryContent } from "@/types/gallery";
+import type { LocationContent } from "@/types/location";
 import type { ServicesContent } from "@/types/services";
 import type { TestimonialsContent } from "@/types/testimonials";
 
@@ -144,6 +146,14 @@ const faqContent: FAQContent = {
   ],
 };
 
+const locationContent: LocationContent = {
+  eyebrow: "Localização",
+  title: "Um ponto de referência para o atendimento",
+  description:
+    "Esta área pode apresentar o endereço e facilitar o acesso às informações de localização.",
+  address: "Endereço demonstrativo · Centro · Cidade — UF",
+};
+
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
@@ -174,6 +184,18 @@ export default function Home() {
       <GallerySection content={galleryContent} id="galeria" />
       <TestimonialsSection content={testimonialsContent} id="avaliacoes" />
       <FAQSection content={faqContent} id="faq" />
+      <LocationSection
+        content={locationContent}
+        id="localizacao"
+        media={
+          <div
+            aria-hidden="true"
+            className="flex items-center justify-center p-8 text-center text-sm font-medium leading-6 text-muted-text sm:text-base"
+          >
+            Área para mapa ou referência visual
+          </div>
+        }
+      />
     </main>
   );
 }
