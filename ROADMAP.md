@@ -93,7 +93,33 @@
 - [x] CTA global;
 - [x] CTA contextual.
 
-## Etapa 11 — Template de serviços
+## Etapa 11 — Redesign visual do Core
+
+- [x] auditoria visual;
+- [x] blueprint compositivo;
+- [x] Design System mínimo;
+- [ ] Header + Hero;
+- [ ] About;
+- [ ] Services + Benefits;
+- [ ] Gallery;
+- [ ] Testimonials;
+- [ ] FAQ + Location;
+- [ ] Final CTA + Footer;
+- [ ] auditoria responsiva e stress.
+
+## Etapa 12 — Auditoria de segurança
+
+- [ ] dependências e vulnerabilidades;
+- [ ] secrets e arquivos sensíveis;
+- [ ] headers HTTP;
+- [ ] CSP;
+- [ ] clickjacking;
+- [ ] URLs externas;
+- [ ] XSS e conteúdo configurável;
+- [ ] build de produção;
+- [ ] testes dinâmicos.
+
+## Etapa 13 — Template de serviços
 
 - [ ] composição das Sections;
 - [ ] configuração;
@@ -103,7 +129,7 @@
 - [ ] acessibilidade;
 - [ ] performance.
 
-## Etapa 12 — Primeiro caso real: beleza
+## Etapa 14 — Primeiro caso real: beleza
 
 - [ ] coletar conteúdo;
 - [ ] definir identidade;
@@ -113,14 +139,14 @@
 - [ ] revisar;
 - [ ] publicar demo.
 
-## Etapa 13 — Refatoração 1
+## Etapa 15 — Refatoração 1
 
 - [ ] identificar acoplamentos;
 - [ ] remover decisões específicas do caso;
 - [ ] revisar APIs;
 - [ ] documentar aprendizado.
 
-## Etapa 14 — Catálogo
+## Etapa 16 — Catálogo
 
 - [ ] módulo catalog;
 - [ ] ProductCard;
@@ -131,7 +157,7 @@
 - [ ] CTA contextual;
 - [ ] financiamento.
 
-## Etapa 15 — Segundo caso real: loja de motos
+## Etapa 17 — Segundo caso real: loja de motos
 
 - [ ] conteúdo;
 - [ ] identidade;
@@ -140,13 +166,13 @@
 - [ ] localização;
 - [ ] demo.
 
-## Etapa 16 — Refatoração 2
+## Etapa 18 — Refatoração 2
 
 - [ ] validar independência do Core;
 - [ ] revisar módulos;
 - [ ] consolidar padrões.
 
-## Etapa 17 — Produtos personalizados
+## Etapa 19 — Produtos personalizados
 
 - [ ] catálogo;
 - [ ] upload;
@@ -155,14 +181,14 @@
 - [ ] carrinho;
 - [ ] checkout/pedido.
 
-## Etapa 18 — Terceiro caso real: canecas
+## Etapa 20 — Terceiro caso real: canecas
 
 - [ ] fluxo completo;
 - [ ] usabilidade mobile;
 - [ ] compra/pedido;
 - [ ] validação real.
 
-## Etapa 19 — Automação
+## Etapa 21 — Automação
 
 Somente depois de o Core estar validado:
 

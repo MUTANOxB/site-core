@@ -40,9 +40,9 @@ const sizeClasses: Record<ButtonSize, string> = {
 const variantStyles: Record<ButtonVariant, ButtonVisualStyle> = {
   primary: {
     "--button-background": "var(--color-primary)",
-    "--button-hover-background": "var(--color-secondary)",
+    "--button-hover-background": "var(--color-primary-hover)",
     borderColor: "var(--color-primary)",
-    color: "var(--color-background)",
+    color: "var(--color-primary-contrast)",
   },
   secondary: {
     "--button-background": "var(--color-surface)",

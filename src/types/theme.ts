@@ -1,5 +1,7 @@
 export interface ThemeColors {
   primary: string;
+  primaryContrast: string;
+  primaryHover: string;
   secondary: string;
   background: string;
   surface: string;

@@ -3,6 +3,8 @@ import type { ThemeConfig } from "@/types/theme";
 export const themeConfig: ThemeConfig = {
   colors: {
     primary: "#171717",
+    primaryContrast: "#ffffff",
+    primaryHover: "#525252",
     secondary: "#525252",
     background: "#ffffff",
     surface: "#f5f5f5",

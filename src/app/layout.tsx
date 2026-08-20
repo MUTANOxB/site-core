@@ -14,6 +14,8 @@ type RootLayoutProps = Readonly<{
 
 type ThemeStyle = CSSProperties & {
   "--theme-color-primary": string;
+  "--theme-color-primary-contrast": string;
+  "--theme-color-primary-hover": string;
   "--theme-color-secondary": string;
   "--theme-color-background": string;
   "--theme-color-surface": string;
@@ -40,6 +42,8 @@ export const metadata: Metadata = {
 
 const themeStyle: ThemeStyle = {
   "--theme-color-primary": themeConfig.colors.primary,
+  "--theme-color-primary-contrast": themeConfig.colors.primaryContrast,
+  "--theme-color-primary-hover": themeConfig.colors.primaryHover,
   "--theme-color-secondary": themeConfig.colors.secondary,
   "--theme-color-background": themeConfig.colors.background,
   "--theme-color-surface": themeConfig.colors.surface,

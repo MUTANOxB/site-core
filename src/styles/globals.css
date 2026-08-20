@@ -2,6 +2,8 @@
 
 @theme static inline {
   --color-primary: var(--theme-color-primary);
+  --color-primary-contrast: var(--theme-color-primary-contrast);
+  --color-primary-hover: var(--theme-color-primary-hover);
   --color-secondary: var(--theme-color-secondary);
   --color-background: var(--theme-color-background);
   --color-surface: var(--theme-color-surface);
@@ -13,9 +15,9 @@
   --font-display: var(--theme-font-display);
   --font-body: var(--theme-font-body);
 
-  --radius-sm: 0.5rem;
+  --radius-sm: max(0rem, calc(var(--theme-radius) - 0.25rem));
   --radius-md: var(--theme-radius);
-  --radius-lg: 1rem;
+  --radius-lg: calc(var(--theme-radius) + 0.25rem);
   --radius-pill: 9999px;
 
   --shadow-default: var(--theme-shadow);

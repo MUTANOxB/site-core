@@ -6,6 +6,8 @@ Criar uma base visual profissional sem forçar todos os clientes a terem a mesma
 
 O Design System deve padronizar qualidade, não personalidade.
 
+A direção visual vigente é **Editorial Comercial Modular**: composições editoriais variadas sobre uma infraestrutura comercial compartilhada.
+
 ## 2. Princípios
 
 1. Hierarquia visual clara.
@@ -38,6 +40,8 @@ Cada site pode reorganizar e variar Sections mantendo a mesma infraestrutura.
 O tema deverá prever tokens para:
 
 - cor principal;
+- contraste da cor principal;
+- hover da cor principal;
 - cor secundária;
 - fundo;
 - superfície;
@@ -51,16 +55,43 @@ O tema deverá prever tokens para:
 
 Evitar valores arbitrários repetidos quando um token resolver.
 
+`primaryContrast` explicita o par de contraste de `primary`, permitindo seu uso seguro como foreground ou background sem pressupor que `background` seja a cor contrastante. Seu default é `#ffffff`. O token prepara grandes campos, como Final CTA e Footer, sem implicar redesign desses componentes agora.
+
+`primaryHover` define o hover de `primary` sem acoplá-lo a `secondary`, que permanece semanticamente independente. Seu default é `#525252`.
+
+O token `spacing` é preservado, embora ainda não participe globalmente do layout. Sua integração fica para avaliação futura.
+
+### Bordas
+
+Usar border para regras editoriais, transições funcionais, separação entre itens e delimitação necessária por contraste.
+
+Evitar contornar automaticamente toda mídia, aplicar `border + surface + radius` em toda unidade ou combinar bordas externa e interna sem função.
+
+### Surface
+
+`surface` pode representar o campo tonal de um ato, dropdown, área realmente contida ou estado funcional.
+
+Não é background automático de card, tratamento obrigatório de cada item nem decoração padrão.
+
+### Radius
+
+Os tokens `sm`, `md` e `lg` derivam do mesmo radius-base, para que controles interativos respondam ao tema em conjunto. `pill` permanece funcional em `9999px`.
+
+Mídia estrutural não recebe radius automaticamente, breakout normalmente não usa radius e cards só o recebem quando a unidade realmente justificar. Evitar borda externa e interna simultâneas sem função.
+
 ## 5. Tipografia
 
-Definir no mínimo:
+Papéis tipográficos:
 
-- display;
-- H1;
-- H2;
-- H3;
-- body;
-- small.
+- **DISPLAY** — H1, headline de fechamento e marca grande quando necessário;
+- **EDITORIAL HEADING** — H2, H3 e quote focal; pode usar `font-display`;
+- **BODY** — descrições, parágrafos, FAQ e conteúdo;
+- **LABEL** — botão, navegação e ações;
+- **EYEBROW / META** — contexto curto, índice e microcopy.
+
+A infraestrutura `font-display` e `font-body` é suficiente por enquanto. Os papéis não exigem cinco famílias ou variáveis CSS diferentes.
+
+Eyebrow não é obrigatória: usar uppercase somente quando curta e sentence case quando longa. Não deve repetir informação óbvia e pode desaparecer quando não agregar contexto.
 
 A escolha da fonte pode variar por cliente.
 
@@ -87,15 +118,27 @@ Todo botão deve possuir:
 
 Usar largura máxima coerente.
 
+O Container base preserva o limite de `90rem`.
+
 Evitar conteúdo encostado nas laterais em telas pequenas.
 
 O Container de conteúdo pode ser amplo, com limite definido, enquanto textos corridos mantêm uma measure independente e confortável.
 
 ## 8. Sections
 
-Sections devem possuir ritmo vertical consistente.
+Sections usam três densidades transversais:
+
+- `compact`: `py-10 sm:py-12 lg:py-14 xl:py-16 2xl:py-20`;
+- `regular`: `py-16 sm:py-20 lg:py-24 xl:py-28 2xl:py-32` — default e ritmo atual;
+- `immersive`: `py-20 sm:py-24 lg:py-28 xl:py-32 2xl:py-36`.
+
+Não criar tokens de espaçamento por Section. A composição específica continua sob responsabilidade de cada Section.
 
 Nem todas precisam usar o mesmo fundo ou layout.
+
+Em mobile e tablet, as composições devem ser recompostas, em vez de apenas empilhar a versão desktop.
+
+Novas composições podem usar os dados `eyebrow`, `title` e `description` sem necessariamente renderizar o primitive `SectionTitle` completo. Sua API permanece inalterada até que repetição real justifique novas variantes.
 
 Toda composição deve ser validada também em desktop grande, incluindo 1920 px, e não apenas quanto à ausência de overflow.
 
@@ -127,6 +170,8 @@ Imagens importantes devem:
 ## 11. Animações
 
 Animação é acabamento, não estrutura.
+
+Nenhuma dependência de motion é obrigatória.
 
 Inicialmente preferir:
 
