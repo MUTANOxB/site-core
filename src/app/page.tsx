@@ -2,6 +2,7 @@ import { siteConfig } from "@/config/site";
 import { AboutSection } from "@/sections/about/AboutSection";
 import { BenefitsSection } from "@/sections/benefits/BenefitsSection";
 import { FAQSection } from "@/sections/faq/FAQSection";
+import { FinalCTASection } from "@/sections/final-cta/FinalCTASection";
 import { GallerySection } from "@/sections/gallery/GallerySection";
 import { HeroSection } from "@/sections/hero/HeroSection";
 import { LocationSection } from "@/sections/location/LocationSection";
@@ -9,6 +10,7 @@ import { ServicesSection } from "@/sections/services/ServicesSection";
 import { TestimonialsSection } from "@/sections/testimonials/TestimonialsSection";
 import type { BenefitsContent } from "@/types/benefits";
 import type { FAQContent } from "@/types/faq";
+import type { FinalCTAContent } from "@/types/final-cta";
 import type { GalleryContent } from "@/types/gallery";
 import type { LocationContent } from "@/types/location";
 import type { ServicesContent } from "@/types/services";
@@ -154,6 +156,21 @@ const locationContent: LocationContent = {
   address: "Endereço demonstrativo · Centro · Cidade — UF",
 };
 
+const finalCTAContent: FinalCTAContent = {
+  eyebrow: "Próximo passo",
+  title: "Uma estrutura pronta para evoluir com novas necessidades",
+  description:
+    "O Core organiza as bases da experiência para que cada projeto possa avançar de forma consistente.",
+  primaryAction: {
+    label: "Iniciar próximo passo",
+    href: "#inicio",
+  },
+  secondaryAction: {
+    label: "Rever serviços",
+    href: "#servicos",
+  },
+};
+
 export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
@@ -196,6 +213,7 @@ export default function Home() {
           </div>
         }
       />
+      <FinalCTASection content={finalCTAContent} id="cta-final" />
     </main>
   );
 }

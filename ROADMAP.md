@@ -82,7 +82,7 @@
 - [x] auditoria de escala desktop;
 - [x] FAQ;
 - [x] Localização;
-- [ ] CTA final;
+- [x] CTA final;
 - [ ] Footer.
 
 ## Etapa 10 — WhatsApp
