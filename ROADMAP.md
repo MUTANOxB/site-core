@@ -87,9 +87,9 @@
 
 ## Etapa 10 — WhatsApp
 
-- [ ] normalização de telefone;
-- [ ] geração de URL;
-- [ ] mensagem configurável;
+- [x] normalização de telefone;
+- [x] geração de URL;
+- [x] mensagem configurável;
 - [ ] CTA global;
 - [ ] CTA contextual.
 
