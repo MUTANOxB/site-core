@@ -6,5 +6,5 @@ export const navigationConfig: NavigationConfig = {
     { label: "Sobre", href: "#sobre" },
     { label: "Serviços", href: "#servicos" },
   ],
-  cta: { label: "Contato", href: "#contato" },
+  cta: { label: "Contato", href: "#cta-final" },
 };
