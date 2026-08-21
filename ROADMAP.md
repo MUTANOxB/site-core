@@ -102,7 +102,7 @@
 - [x] About;
 - [x] Services + Benefits;
 - [x] Art direction / identidade visual;
-- [ ] Gallery;
+- [x] Gallery;
 - [ ] Testimonials;
 - [ ] FAQ + Location;
 - [ ] Final CTA + Footer;
