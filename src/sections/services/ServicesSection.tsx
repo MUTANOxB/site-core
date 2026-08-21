@@ -13,7 +13,7 @@ export function ServicesSection({ content, id }: ServicesSectionProps) {
   const headingId = id ? `${id}-title` : undefined;
 
   return (
-    <Section aria-labelledby={headingId} id={id}>
+    <Section aria-labelledby={headingId} density="regular" id={id}>
       <Container>
         <SectionTitle
           className="break-words"
@@ -24,18 +24,25 @@ export function ServicesSection({ content, id }: ServicesSectionProps) {
         />
 
         {items.length ? (
-          <ul className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:mt-14 xl:gap-8 2xl:gap-10">
+          <ul className="mt-10 grid grid-cols-1 gap-x-8 gap-y-10 sm:mt-12 sm:grid-cols-2 sm:gap-x-10 sm:gap-y-12 lg:mt-16 lg:gap-x-12 lg:gap-y-14 xl:mt-20 xl:gap-x-16 xl:gap-y-16 2xl:gap-x-20">
             {items.map((item, index) => (
               <li
-                className="min-w-0 rounded-lg border border-border bg-surface p-6 xl:p-8 2xl:p-10"
+                className="min-w-0 border-t border-border pt-6 sm:pt-7 xl:pt-8"
                 key={`${item.title}-${index}`}
               >
-                <h3 className="break-words font-display text-xl font-semibold tracking-tight text-text xl:text-2xl">
+                <span
+                  aria-hidden="true"
+                  className="font-display text-xs font-semibold uppercase tracking-[0.14em] text-muted-text sm:text-sm"
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <h3 className="mt-3 break-words font-display text-xl font-semibold tracking-tight text-text sm:mt-4 sm:text-2xl xl:text-3xl">
                   {item.title}
                 </h3>
 
                 {item.description ? (
-                  <p className="mt-3 break-words text-base leading-7 text-muted-text xl:mt-4 xl:text-lg xl:leading-8">
+                  <p className="mt-2 break-words text-base leading-7 text-muted-text sm:mt-3 xl:text-lg xl:leading-8">
                     {item.description}
                   </p>
                 ) : null}

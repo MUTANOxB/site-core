@@ -13,7 +13,7 @@ export function BenefitsSection({ content, id }: BenefitsSectionProps) {
   const headingId = id ? `${id}-title` : undefined;
 
   return (
-    <Section aria-labelledby={headingId} id={id}>
+    <Section aria-labelledby={headingId} density="regular" id={id}>
       <Container>
         <div
           className={
@@ -34,23 +34,23 @@ export function BenefitsSection({ content, id }: BenefitsSectionProps) {
             <ul className="min-w-0 border-t border-border">
               {items.map((item, index) => (
                 <li
-                  className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-x-4 border-b border-border py-6 sm:gap-x-6 sm:py-8 xl:gap-x-8 xl:py-10"
+                  className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)] gap-x-4 border-b border-border py-5 sm:gap-x-6 sm:py-6 lg:py-7 xl:gap-x-8 xl:py-8"
                   key={`${item.title}-${index}`}
                 >
                   <span
                     aria-hidden="true"
-                    className="pt-1 font-display text-sm font-semibold tabular-nums tracking-[0.12em] text-muted-text xl:pt-2 xl:text-base"
+                    className="pt-1 font-display text-xs font-semibold tabular-nums tracking-[0.14em] text-muted-text sm:text-sm xl:pt-1.5 xl:text-base"
                   >
                     {String(index + 1).padStart(2, "0")}
                   </span>
 
                   <div className="min-w-0">
-                    <h3 className="break-words font-display text-xl font-semibold tracking-tight text-text sm:text-2xl xl:text-3xl">
+                    <h3 className="break-words font-display text-lg font-semibold tracking-tight text-text sm:text-xl xl:text-2xl">
                       {item.title}
                     </h3>
 
                     {item.description ? (
-                      <p className="mt-3 break-words text-base leading-7 text-muted-text xl:text-lg xl:leading-8">
+                      <p className="mt-2 break-words text-sm leading-6 text-muted-text sm:mt-2.5 sm:text-base sm:leading-7 xl:text-lg xl:leading-8">
                         {item.description}
                       </p>
                     ) : null}

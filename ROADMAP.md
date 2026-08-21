@@ -100,7 +100,7 @@
 - [x] Design System mínimo;
 - [x] Header + Hero;
 - [x] About;
-- [ ] Services + Benefits;
+- [x] Services + Benefits;
 - [ ] Gallery;
 - [ ] Testimonials;
 - [ ] FAQ + Location;
