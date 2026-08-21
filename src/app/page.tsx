@@ -180,10 +180,19 @@ export default function Home() {
   return (
     <main id="main-content" tabIndex={-1}>
       <HeroSection
-        description={siteConfig.description}
+        description="Uma estrutura modular para criar experiências digitais consistentes, responsivas e adaptáveis a qualquer contexto comercial."
+        eyebrow="Base comercial reutilizável"
         id="inicio"
+        primaryAction={{
+          label: "Explorar serviços",
+          href: "#servicos",
+        }}
+        secondaryAction={{
+          label: "Conhecer a estrutura",
+          href: "#sobre",
+        }}
         title={siteConfig.name}
-        variant="centered"
+        variant="split"
       />
       <AboutSection
         description="Uma estrutura reutilizável para criar experiências digitais consistentes sem limitar a identidade de cada projeto."

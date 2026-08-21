@@ -29,28 +29,50 @@ export function Header() {
         Pular para o conteúdo
       </a>
 
-      <Container className="flex min-h-16 items-center justify-between gap-4 lg:min-h-20 lg:gap-8 2xl:min-h-24 2xl:gap-10">
+      {/* Mobile / Tablet: flex layout com marca + hamburger */}
+      <Container className="flex min-h-16 items-center justify-between gap-4 lg:hidden">
         <Link
-          aria-label={siteConfig.name + " - página inicial"}
-          className="min-w-0 rounded-sm font-display text-lg font-semibold tracking-tight text-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary lg:text-xl 2xl:text-2xl"
+          aria-label={siteConfig.name + " — página inicial"}
+          className="min-w-0 rounded-sm font-display text-lg font-semibold tracking-tight text-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           href="/"
         >
-          <span className="block truncate">{siteConfig.name}</span>
+          <span className="block break-words">{siteConfig.name}</span>
         </Link>
 
-        <div className="hidden shrink-0 items-center gap-6 lg:flex lg:gap-8 2xl:gap-10">
-          <nav aria-label="Navegação principal">
-            <ul className="flex items-center gap-1 2xl:gap-2">
-              {navigationConfig.items.map((item) => (
-                <li key={item.href}>
-                  <a className={navigationLinkClasses} href={item.href}>
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+        <MobileMenu cta={globalCta} items={navigationConfig.items} />
+      </Container>
 
+      {/* Desktop lg+: grid editorial de 12 colunas compartilhado com Hero */}
+      <Container className="hidden min-h-20 items-center lg:grid lg:grid-cols-12 lg:gap-x-6 2xl:min-h-24 2xl:gap-x-8">
+        {/* Marca: cols 1–3 */}
+        <div className="col-span-3 flex min-w-0 items-center">
+          <Link
+            aria-label={siteConfig.name + " — página inicial"}
+            className="min-w-0 rounded-sm font-display text-xl font-semibold tracking-tight text-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary 2xl:text-2xl"
+            href="/"
+          >
+            <span className="block break-words">{siteConfig.name}</span>
+          </Link>
+        </div>
+
+        {/* Nav: cols 4–10 — centralizada no campo */}
+        <nav
+          aria-label="Navegação principal"
+          className="col-span-7 flex justify-center"
+        >
+          <ul className="flex items-center gap-1 2xl:gap-2">
+            {navigationConfig.items.map((item) => (
+              <li key={item.href}>
+                <a className={navigationLinkClasses} href={item.href}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* CTA: cols 11–12 — alinhado à direita */}
+        <div className="col-span-2 flex items-center justify-end">
           <Button
             className="lg:px-5 lg:text-base 2xl:min-h-12 2xl:px-6"
             href={globalCta.href}
@@ -59,11 +81,6 @@ export function Header() {
             {globalCta.label}
           </Button>
         </div>
-
-        <MobileMenu
-          cta={globalCta}
-          items={navigationConfig.items}
-        />
       </Container>
     </header>
   );

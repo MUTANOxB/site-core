@@ -98,7 +98,7 @@
 - [x] auditoria visual;
 - [x] blueprint compositivo;
 - [x] Design System mínimo;
-- [ ] Header + Hero;
+- [x] Header + Hero;
 - [ ] About;
 - [ ] Services + Benefits;
 - [ ] Gallery;
