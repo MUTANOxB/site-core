@@ -101,6 +101,7 @@
 - [x] Header + Hero;
 - [x] About;
 - [x] Services + Benefits;
+- [x] Art direction / identidade visual;
 - [ ] Gallery;
 - [ ] Testimonials;
 - [ ] FAQ + Location;

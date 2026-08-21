@@ -230,3 +230,47 @@ Pode utilizar:
 - forte orientação à ação.
 
 Esses exemplos não são templates obrigatórios.
+
+## 14. Default demo skin / Art Direction
+
+A demonstração default do Core adota a direção **WARM MONOCHROME EDITORIAL**:
+
+- **PAPER** (`#F0E6D8` / `primaryContrast` / `background`) — base orgânica, clara e aquecida; fornece conforto, calor, humanidade e espaço negativo. Decisão congelada e única grande fonte de calor constante.
+- **SURFACE** (`#E5DDD2` / `surface`) — campo tonal neutro-aquecido para superfícies, transições editoriais e estados funcionais; sem aparência cinza fria.
+- **INK** (`#171512` / `primary` / `text`) — contraste tipográfico firme e presença estrutural nítida, quase neutro em tom espresso profundo.
+- **ACCENT** (`#633E32` / `secondary`) — acento gráfico profundo e altamente restrito (~3% max), aplicado em regras editoriais, índices numéricos e microdetalhes funcionais.
+- **MUTED** (`#685F57` / `mutedText`) — texto secundário, eyebrows neutros e metadata.
+- **BORDER** (`#CDC1B3` / `border`) — divisores e regras estruturais discretas em harmonia com o papel.
+- **DARK FIELD (futuro)** (`#182024` ou `#171512`) — registrado para exploração futura em fechamentos narrativos, Final CTA ou Footer. Não implementado nesta etapa.
+
+### Tabela de contraste WCAG 2.1:
+
+| Par cromático | Ratio medido | Status WCAG |
+| :--- | :--- | :--- |
+| **INK** (`#171512`) sobre **PAPER** (`#F0E6D8`) | 14.76:1 | AAA (Normal Text >= 7.0:1) |
+| **INK** (`#171512`) sobre **SURFACE** (`#E5DDD2`) | 13.54:1 | AAA (Normal Text >= 7.0:1) |
+| **ACCENT** (`#633E32`) sobre **PAPER** (`#F0E6D8`) | 7.51:1 | AAA (Normal Text >= 7.0:1) |
+| **ACCENT** (`#633E32`) sobre **SURFACE** (`#E5DDD2`) | 6.89:1 | AA (Normal Text >= 4.5:1) |
+| **MUTED** (`#685F57`) sobre **PAPER** (`#F0E6D8`) | 5.06:1 | AA (Normal Text >= 4.5:1) |
+| **MUTED** (`#685F57`) sobre **SURFACE** (`#E5DDD2`) | 4.64:1 | AA (Normal Text >= 4.5:1) |
+| `::selection` (**PAPER** sobre **ACCENT**) | 7.51:1 | AAA (Normal Text >= 7.0:1) |
+
+### Diretrizes da Art Direction:
+
+1. **Distribuição cromática (97% / 3%)**: PAPER, SURFACE e INK compõem ~97% da área visual da interface; SECONDARY atua em no máximo ~3% como detalhe estrutural e de foco, sem dominar a cena.
+2. **Composição editorial aberta no Hero**: o Hero abandona o formato de card ou rail com fundo sólido. A descrição e as ações integram-se diretamente à malha da página sobre o PAPER, estruturadas por uma regra gráfica refinada, assimetria ótica e um fólio editorial decorativo (`01`).
+3. **Ações hierarquizadas**: o botão primário é INK sólido com texto PAPER; o secundário adota tratamento leve (ghost textual com seta indicativa), criando contraste de peso visual sem parecer um segundo botão concorrente.
+4. **Textura tátil do PAPER**: aplicação global de uma microtextura fractal monocromática via CSS (~2% de opacidade), quebrando a esterilidade da tela digital plana sem degradar legibilidade ou performance.
+5. **Ritmo de cenas do primeiro ato**:
+   - **Header**: PAPER discreto (marca Geist/sans, navegação neutra, microinterações funcionais).
+   - **Hero**: momento forte, aberto e assimétrico com H1 dominante e rail tipográfico.
+   - **About**: momento silencioso (somente PAPER, INK e MUTED; Newsreader fornece identidade).
+   - **Services**: momento estruturado com índices editoriais e divisores nítidos.
+   - **Benefits**: repouso visual e ritmo sequencial sóbrio (índices em MUTED).
+   - **Gallery**: futuro momento visual de forte protagonismo.
+6. **Movimento de entrada funcional**:
+   - Hero com suave transição de entrada CSS (opacidade e pequeno deslocamento vertical, 600–700ms com curva suave ease-out).
+   - Desativação completa sob `prefers-reduced-motion: reduce`.
+   - Sections seguintes mantidas estáticas nesta etapa, preparando a Gallery para movimento narrativo posterior.
+7. **Separação de estrutura e identidade**: a paleta e os detalhes editoriais são a pele padrão do Core; clientes futuros podem personalizar cores e tipografia mantendo toda a arquitetura intacta.
+8. **Tipografia contrastante**: o Core utiliza `Geist` para o corpo (`font-body`), marca, navegação e botões, e `Newsreader` para elementos editoriais e display (`font-display`), com tracking refinado e proporções confortáveis.

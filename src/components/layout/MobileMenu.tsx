@@ -12,7 +12,7 @@ interface MobileMenuProps {
 }
 
 const navigationLinkClasses =
-  "flex min-h-11 items-center rounded-md px-3 py-2 font-medium text-text transition-colors hover:bg-surface hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none";
+  "flex min-h-11 items-center rounded-md px-3 py-2 font-medium text-muted-text transition-colors hover:bg-surface hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary motion-reduce:transition-none";
 
 export function MobileMenu({ cta, items }: MobileMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
@@ -65,7 +65,7 @@ export function MobileMenu({ cta, items }: MobileMenuProps) {
         aria-label={
           isOpen ? "Fechar menu de navegação" : "Abrir menu de navegação"
         }
-        className="inline-flex size-11 items-center justify-center rounded-md text-text transition-colors hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none"
+        className="inline-flex size-11 items-center justify-center rounded-md text-text transition-colors hover:bg-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary motion-reduce:transition-none"
         onClick={() => setIsOpen((currentState) => !currentState)}
         type="button"
       >

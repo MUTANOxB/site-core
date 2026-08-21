@@ -50,29 +50,45 @@ export function HeroSection({
   /* ------------------------------------------------------------------ */
   if (!isCentered) {
     return (
-      <Section density={hasMedia ? "immersive" : "regular"} id={id}>
+      <Section
+        className={
+          hasMedia
+            ? undefined
+            : "pb-14 sm:pb-16 lg:pb-20 xl:pb-24 2xl:pb-28"
+        }
+        density={hasMedia ? "immersive" : "regular"}
+        id={id}
+      >
         <Container>
-          {/* Eyebrow — tratamento tipográfico, sem Badge / pill        */}
-          {/* sentence case, sem uppercase forçado, tracking sutil      */}
-          {eyebrow ? (
-            <p className="mb-6 text-xs font-semibold tracking-wide text-muted-text sm:mb-8 lg:mb-10">
-              {eyebrow}
-            </p>
-          ) : null}
+          {/* Grid editorial aberto com assimetria intencional */}
+          <div className="grid grid-cols-4 gap-y-10 sm:grid-cols-8 sm:items-start sm:gap-x-8 sm:gap-y-0 lg:grid-cols-12 lg:gap-x-10 xl:gap-x-12">
+            {/* Campo do H1 dominante — ocupa a maior parte da malha */}
+            <div className="col-span-4 animate-hero-heading sm:col-span-5 lg:col-span-7 xl:col-span-8">
+              {eyebrow ? (
+                <p className="mb-4 text-xs font-medium uppercase tracking-[0.18em] text-muted-text sm:mb-6 lg:mb-8">
+                  {eyebrow}
+                </p>
+              ) : null}
 
-          {/* Grid editorial único responsivo */}
-          <div className="grid grid-cols-4 gap-y-8 sm:grid-cols-8 sm:items-start sm:gap-x-6 sm:gap-y-0 lg:grid-cols-12 lg:gap-x-8 xl:gap-x-10">
-            {/* Campo do H1 ÚNICO — dominante */}
-            <div className="col-span-4 sm:col-span-5 lg:col-span-7 xl:col-span-8">
-              <h1 className="break-words font-display text-4xl font-bold leading-[1.1] tracking-tight text-text sm:text-5xl lg:text-6xl xl:text-7xl xl:leading-[1.06] 2xl:text-7xl">
+              <h1 className="break-words font-display text-4xl font-semibold leading-[1.08] tracking-tight text-text sm:text-5xl sm:leading-[1.06] lg:text-6xl lg:leading-[1.04] xl:text-[4.5rem] xl:leading-[1.02] 2xl:text-[5.25rem]">
                 {title}
               </h1>
             </div>
 
-            {/* Rail editorial ÚNICO — description + actions (+ mídia no desktop) */}
-            <div className="col-span-4 pl-4 sm:col-span-3 sm:col-start-6 sm:pl-0 lg:col-span-5 lg:col-start-8 xl:col-span-4 xl:col-start-9">
+            {/* Rail editorial integrado — sem caixa/card, estruturado por regra e assimetria */}
+            <div className="col-span-4 animate-hero-rail pt-2 sm:col-span-3 sm:col-start-6 sm:pt-4 lg:col-span-5 lg:col-start-8 lg:pt-6 xl:col-span-4 xl:col-start-9 xl:pt-8">
+              {/* Regra gráfica e índice editorial decorativo */}
+              <div
+                aria-hidden="true"
+                className="mb-5 border-t border-border pt-3 sm:mb-6 sm:pt-4"
+              >
+                <span className="font-sans text-[0.6875rem] font-semibold uppercase tracking-[0.2em] text-muted-text">
+                  01
+                </span>
+              </div>
+
               {description ? (
-                <p className="max-w-sm text-base leading-7 text-muted-text sm:text-lg sm:leading-8">
+                <p className="max-w-md text-base leading-relaxed text-muted-text sm:text-lg sm:leading-8">
                   {description}
                 </p>
               ) : null}
@@ -80,7 +96,7 @@ export function HeroSection({
               {hasActions ? (
                 <div
                   className={[
-                    "flex flex-col gap-3 sm:flex-row sm:flex-wrap",
+                    "flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4",
                     description ? "mt-6 sm:mt-8" : "",
                   ]
                     .filter(Boolean)
@@ -88,6 +104,7 @@ export function HeroSection({
                 >
                   {primaryAction ? (
                     <Button
+                      className="w-full sm:w-auto sm:whitespace-nowrap"
                       href={primaryAction.href}
                       rel={
                         primaryAction.external
@@ -109,6 +126,7 @@ export function HeroSection({
 
                   {secondaryAction ? (
                     <Button
+                      className="inline-flex w-full items-center justify-center gap-1.5 sm:w-auto sm:whitespace-nowrap"
                       href={secondaryAction.href}
                       rel={
                         secondaryAction.external
@@ -119,13 +137,15 @@ export function HeroSection({
                       target={secondaryAction.external ? "_blank" : undefined}
                       variant="ghost"
                     >
-                      {secondaryAction.label}
+                      <span>{secondaryAction.label}</span>
                       {secondaryAction.external ? (
                         <>
                           <span aria-hidden="true">↗</span>
                           <span className="sr-only">(abre em nova aba)</span>
                         </>
-                      ) : null}
+                      ) : (
+                        <span aria-hidden="true">→</span>
+                      )}
                     </Button>
                   ) : null}
                 </div>
@@ -158,22 +178,22 @@ export function HeroSection({
         <div className="grid items-center gap-10 lg:gap-16 lg:py-8 xl:gap-20 xl:py-12 2xl:gap-24 2xl:py-16">
           <div
             className={[
-              "mx-auto max-w-5xl text-center",
+              "mx-auto max-w-5xl text-center animate-hero-heading",
               hasMedia ? "min-w-0" : "",
             ]
               .filter(Boolean)
               .join(" ")}
           >
             {eyebrow ? (
-              <p className="mb-5 text-xs font-semibold uppercase tracking-widest text-muted-text">
+              <p className="mb-5 text-xs font-medium uppercase tracking-[0.18em] text-muted-text">
                 {eyebrow}
               </p>
             ) : null}
 
             <h1
               className={[
-                "break-words font-display text-4xl font-bold leading-tight tracking-tight text-text sm:text-5xl lg:text-6xl",
-                "xl:text-7xl xl:leading-[1.08]",
+                "break-words font-display text-4xl font-semibold leading-tight tracking-tight text-text sm:text-5xl lg:text-6xl",
+                "xl:text-7xl xl:leading-[1.04]",
               ]
                 .filter(Boolean)
                 .join(" ")}
@@ -188,10 +208,10 @@ export function HeroSection({
             ) : null}
 
             {hasActions ? (
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center xl:mt-10 xl:gap-4">
+              <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap xl:mt-10 xl:gap-4">
                 {primaryAction ? (
                   <Button
-                    className="w-full sm:w-auto xl:min-h-14 xl:px-8 xl:text-lg"
+                    className="w-full sm:w-auto sm:whitespace-nowrap xl:min-h-14 xl:px-8 xl:text-lg"
                     href={primaryAction.href}
                     rel={
                       primaryAction.external ? "noopener noreferrer" : undefined
@@ -211,7 +231,7 @@ export function HeroSection({
 
                 {secondaryAction ? (
                   <Button
-                    className="w-full sm:w-auto xl:min-h-14 xl:px-8 xl:text-lg"
+                    className="inline-flex w-full items-center justify-center gap-1.5 sm:w-auto sm:whitespace-nowrap xl:min-h-14 xl:px-8 xl:text-lg"
                     href={secondaryAction.href}
                     rel={
                       secondaryAction.external
@@ -220,15 +240,17 @@ export function HeroSection({
                     }
                     size="lg"
                     target={secondaryAction.external ? "_blank" : undefined}
-                    variant="secondary"
+                    variant="ghost"
                   >
-                    {secondaryAction.label}
+                    <span>{secondaryAction.label}</span>
                     {secondaryAction.external ? (
                       <>
                         <span aria-hidden="true">↗</span>
                         <span className="sr-only">(abre em nova aba)</span>
                       </>
-                    ) : null}
+                    ) : (
+                      <span aria-hidden="true">→</span>
+                    )}
                   </Button>
                 ) : null}
               </div>

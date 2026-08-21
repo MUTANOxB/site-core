@@ -13,7 +13,12 @@ export function ServicesSection({ content, id }: ServicesSectionProps) {
   const headingId = id ? `${id}-title` : undefined;
 
   return (
-    <Section aria-labelledby={headingId} density="regular" id={id}>
+    <Section
+      aria-labelledby={headingId}
+      className="border-y border-border bg-surface"
+      density="regular"
+      id={id}
+    >
       <Container>
         <SectionTitle
           className="break-words"
@@ -32,7 +37,7 @@ export function ServicesSection({ content, id }: ServicesSectionProps) {
               >
                 <span
                   aria-hidden="true"
-                  className="font-display text-xs font-semibold uppercase tracking-[0.14em] text-muted-text sm:text-sm"
+                  className="font-display text-xs font-semibold uppercase tracking-[0.14em] text-secondary sm:text-sm"
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>

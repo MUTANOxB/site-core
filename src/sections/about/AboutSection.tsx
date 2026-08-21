@@ -27,7 +27,7 @@ export function AboutSection({
     <Section aria-labelledby={headingId} density="regular" id={id}>
       <Container>
         {eyebrow ? (
-          <p className="mb-6 text-xs font-semibold uppercase tracking-wider text-muted-text sm:mb-8 lg:mb-10">
+          <p className="mb-6 text-xs font-medium uppercase tracking-[0.18em] text-muted-text sm:mb-8 lg:mb-10">
             {eyebrow}
           </p>
         ) : null}
@@ -35,7 +35,7 @@ export function AboutSection({
         <div className="grid grid-cols-4 gap-y-8 sm:grid-cols-8 sm:items-start sm:gap-x-6 sm:gap-y-0 lg:grid-cols-12 lg:gap-x-8 xl:gap-x-10">
           <div className="col-span-4 sm:col-span-4 lg:col-span-6 xl:col-span-6">
             <h2
-              className="break-words font-display text-3xl font-bold leading-[1.15] tracking-tight text-text sm:text-4xl sm:leading-[1.15] lg:text-5xl lg:leading-[1.12] xl:text-5xl xl:leading-[1.12] 2xl:text-6xl 2xl:leading-[1.1]"
+              className="break-words font-display text-3xl font-semibold leading-[1.15] tracking-tight text-text sm:text-4xl sm:leading-[1.15] lg:text-5xl lg:leading-[1.12] xl:text-5xl xl:leading-[1.12] 2xl:text-6xl 2xl:leading-[1.1]"
               id={headingId}
             >
               {title}

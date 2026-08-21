@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Newsreader } from "next/font/google";
 import type { CSSProperties, ReactNode } from "react";
 
 import { Footer } from "@/components/layout/Footer";
@@ -35,6 +35,13 @@ const coreFont = Geist({
   variable: "--font-core-sans",
 });
 
+const displayFont = Newsreader({
+  display: "swap",
+  subsets: ["latin"],
+  style: "normal",
+  variable: "--font-core-display",
+});
+
 export const metadata: Metadata = {
   title: siteConfig.name,
   description: siteConfig.description,
@@ -60,7 +67,7 @@ const themeStyle: ThemeStyle = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
-      className={coreFont.variable}
+      className={`${coreFont.variable} ${displayFont.variable}`}
       lang={siteConfig.locale}
       style={themeStyle}
     >

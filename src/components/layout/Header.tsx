@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
 import { resolveWhatsAppUrl } from "@/lib/whatsapp";
 
 const navigationLinkClasses =
-  "inline-flex min-h-10 items-center whitespace-nowrap rounded-md px-3 py-2 text-sm font-medium text-muted-text transition-colors hover:bg-surface hover:text-text focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none lg:min-h-11 lg:px-4 lg:text-base";
+  "relative inline-flex min-h-10 items-center whitespace-nowrap px-3 py-2 text-sm font-medium text-muted-text transition-colors hover:text-text after:absolute after:inset-x-3 after:bottom-1 after:h-px after:scale-x-0 after:bg-secondary after:transition-transform hover:after:scale-x-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary motion-reduce:transition-none motion-reduce:after:transition-none lg:min-h-11 lg:px-4 lg:text-base";
 
 export function Header() {
   const globalCta = {
@@ -21,9 +21,9 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-sm">
       <a
-        className="absolute left-4 top-2 z-10 -translate-y-16 rounded-md bg-text px-4 py-2 text-sm font-semibold text-background transition-transform focus:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary motion-reduce:transition-none"
+        className="absolute left-4 top-2 z-10 -translate-y-16 rounded-md bg-text px-4 py-2 text-sm font-semibold text-primary-contrast transition-transform focus:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary motion-reduce:transition-none"
         href="#main-content"
       >
         Pular para o conteúdo
@@ -33,7 +33,7 @@ export function Header() {
       <Container className="flex min-h-16 items-center justify-between gap-4 lg:hidden">
         <Link
           aria-label={siteConfig.name + " — página inicial"}
-          className="min-w-0 rounded-sm font-display text-lg font-semibold tracking-tight text-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          className="min-w-0 rounded-sm font-sans text-lg font-semibold tracking-tight text-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary"
           href="/"
         >
           <span className="block break-words">{siteConfig.name}</span>
@@ -48,7 +48,7 @@ export function Header() {
         <div className="col-span-3 flex min-w-0 items-center">
           <Link
             aria-label={siteConfig.name + " — página inicial"}
-            className="min-w-0 rounded-sm font-display text-xl font-semibold tracking-tight text-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary 2xl:text-2xl"
+            className="min-w-0 rounded-sm font-sans text-xl font-semibold tracking-tight text-text focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-secondary 2xl:text-2xl"
             href="/"
           >
             <span className="block break-words">{siteConfig.name}</span>

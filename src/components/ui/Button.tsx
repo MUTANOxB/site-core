@@ -29,7 +29,7 @@ type ButtonVisualStyle = CSSProperties & {
 };
 
 const baseClasses =
-  "inline-flex cursor-pointer items-center justify-center gap-2 border font-semibold transition-colors [background-color:var(--button-background)] hover:[background-color:var(--button-hover-background)] focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:[background-color:var(--button-background)] motion-reduce:transition-none";
+  "inline-flex cursor-pointer items-center justify-center gap-2 border font-semibold transition-all duration-150 hover:-translate-y-0.5 active:translate-y-0 [background-color:var(--button-background)] hover:[background-color:var(--button-hover-background)] focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:[background-color:var(--button-background)] motion-reduce:transition-none motion-reduce:hover:transform-none motion-reduce:active:transform-none";
 
 const sizeClasses: Record<ButtonSize, string> = {
   sm: "min-h-10 px-4 py-2 text-sm",
@@ -45,8 +45,8 @@ const variantStyles: Record<ButtonVariant, ButtonVisualStyle> = {
     color: "var(--color-primary-contrast)",
   },
   secondary: {
-    "--button-background": "var(--color-surface)",
-    "--button-hover-background": "var(--color-border)",
+    "--button-background": "transparent",
+    "--button-hover-background": "var(--color-surface)",
     borderColor: "var(--color-border)",
     color: "var(--color-text)",
   },
@@ -54,7 +54,7 @@ const variantStyles: Record<ButtonVariant, ButtonVisualStyle> = {
     "--button-background": "transparent",
     "--button-hover-background": "var(--color-surface)",
     borderColor: "transparent",
-    color: "var(--color-primary)",
+    color: "var(--color-text)",
   },
 };
 
@@ -69,7 +69,7 @@ function getButtonStyle(
   return {
     ...variantStyles[variant],
     borderRadius: "var(--radius-md)",
-    outlineColor: "var(--color-primary)",
+    outlineColor: "var(--color-secondary)",
     ...style,
   };
 }

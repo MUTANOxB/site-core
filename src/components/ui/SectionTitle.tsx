@@ -38,7 +38,7 @@ export function SectionTitle({
     .filter(Boolean)
     .join(" ");
   const sectionTitleStyle: SectionTitleStyle = {
-    "--section-title-accent": "var(--color-primary)",
+    "--section-title-accent": "var(--color-muted-text)",
     "--section-title-font": "var(--font-display)",
     "--section-title-muted": "var(--color-muted-text)",
     "--section-title-text": "var(--color-text)",
@@ -54,7 +54,7 @@ export function SectionTitle({
       ) : null}
 
       <h2
-        className="text-3xl font-bold tracking-tight [color:var(--section-title-text)] [font-family:var(--section-title-font)] sm:text-4xl lg:text-[2.625rem] lg:leading-tight xl:text-5xl xl:leading-[1.1]"
+        className="text-3xl font-semibold tracking-tight [color:var(--section-title-text)] [font-family:var(--section-title-font)] sm:text-4xl lg:text-[2.625rem] lg:leading-[1.15] xl:text-5xl xl:leading-[1.12]"
         id={headingId}
       >
         {title}
