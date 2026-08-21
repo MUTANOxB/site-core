@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 
 import { Container } from "@/components/ui/Container";
 import { Section } from "@/components/ui/Section";
-import { SectionTitle } from "@/components/ui/SectionTitle";
 import type { AboutContent } from "@/types/about";
 
 export type AboutSectionProps = AboutContent & {
@@ -25,28 +24,40 @@ export function AboutSection({
   const headingId = id ? `${id}-title` : undefined;
 
   return (
-    <Section aria-labelledby={headingId} id={id}>
+    <Section aria-labelledby={headingId} density="regular" id={id}>
       <Container>
-        <div
-          className={[
-            "grid items-center gap-10 lg:gap-16 xl:gap-24",
-            hasMedia
-              ? "lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]"
-              : "",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-        >
-          <div className={hasMedia ? "min-w-0" : "max-w-3xl"}>
-            <SectionTitle
-              description={description}
-              eyebrow={eyebrow}
-              headingId={headingId}
-              title={title}
-            />
+        {eyebrow ? (
+          <p className="mb-6 text-xs font-semibold uppercase tracking-wider text-muted-text sm:mb-8 lg:mb-10">
+            {eyebrow}
+          </p>
+        ) : null}
+
+        <div className="grid grid-cols-4 gap-y-8 sm:grid-cols-8 sm:items-start sm:gap-x-6 sm:gap-y-0 lg:grid-cols-12 lg:gap-x-8 xl:gap-x-10">
+          <div className="col-span-4 sm:col-span-4 lg:col-span-6 xl:col-span-6">
+            <h2
+              className="break-words font-display text-3xl font-bold leading-[1.15] tracking-tight text-text sm:text-4xl sm:leading-[1.15] lg:text-5xl lg:leading-[1.12] xl:text-5xl xl:leading-[1.12] 2xl:text-6xl 2xl:leading-[1.1]"
+              id={headingId}
+            >
+              {title}
+            </h2>
+          </div>
+
+          <div className="col-span-4 pl-4 sm:col-span-4 sm:col-start-5 sm:pl-0 lg:col-span-6 lg:col-start-7 xl:col-span-5 xl:col-start-8">
+            {description ? (
+              <p className="text-lg font-medium leading-relaxed text-text sm:text-lg sm:leading-relaxed lg:text-xl lg:leading-8">
+                {description}
+              </p>
+            ) : null}
 
             {paragraphs?.length ? (
-              <div className="mt-6 space-y-4 break-words text-base leading-7 text-muted-text sm:text-lg xl:mt-8 xl:space-y-5 xl:text-xl xl:leading-8">
+              <div
+                className={[
+                  "space-y-4 text-base leading-7 text-muted-text sm:text-base sm:leading-7 lg:text-lg lg:leading-8",
+                  description ? "mt-6 sm:mt-6 lg:mt-8" : "",
+                ]
+                  .filter(Boolean)
+                  .join(" ")}
+              >
                 {paragraphs.map((paragraph, index) => (
                   <p key={`${index}-${paragraph}`}>{paragraph}</p>
                 ))}
@@ -54,7 +65,11 @@ export function AboutSection({
             ) : null}
           </div>
 
-          {hasMedia ? <div className="min-w-0">{media}</div> : null}
+          {hasMedia ? (
+            <div className="col-span-4 mt-10 min-w-0 sm:col-span-8 sm:mt-12 lg:col-span-12 lg:mt-16 xl:mt-20">
+              {media}
+            </div>
+          ) : null}
         </div>
       </Container>
     </Section>

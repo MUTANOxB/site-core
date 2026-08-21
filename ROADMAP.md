@@ -99,7 +99,7 @@
 - [x] blueprint compositivo;
 - [x] Design System mínimo;
 - [x] Header + Hero;
-- [ ] About;
+- [x] About;
 - [ ] Services + Benefits;
 - [ ] Gallery;
 - [ ] Testimonials;
